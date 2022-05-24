@@ -57,3 +57,19 @@ p.tweetDate {
   font-size: 18px;
   opacity: 60%;
 }
+
+i.fa-solid.fa-flag:hover {
+  color: coral;
+}
+
+i.fa-solid.fa-retweet:hover {
+  color: coral;
+}
+
+i.fa-solid.fa-heart:hover {
+  color: coral;
+}
+
+i.fa-solid.fa-cannabis:hover {
+  color: coral;
+}
