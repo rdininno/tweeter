@@ -1,0 +1,59 @@
+article.tweetContainer:hover {
+  box-shadow: 5px 10px #f8a3a3;
+}
+
+article.tweetContainer {
+  margin: 40px 0px;
+  border: 3px solid #767676;
+  padding: 25px;
+}
+
+article.tweetContainer header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 20px;
+  background-color: #f4f1ec;
+  padding: 10px 10px;
+  margin: 15px 0px;
+}
+
+.tweetHeaderAccount {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+p.tweetAccount {
+  margin: 20px 10px;
+}
+
+p.tweetUser {
+  margin: 20px 10px;
+  opacity: 65%;
+}
+
+p.tweet {
+  font-size: 30px;
+  padding: 10px 11px 15px;
+  border-bottom: 3px solid #767676;
+  margin-bottom: 15px;
+}
+
+article.tweetContainer footer {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+p.tweetDate {
+  margin: 0px 10px;
+  font-size: 18px;
+  opacity: 60%;
+}
+
+.tweetIcons {
+  margin: 0px 10px;
+  font-size: 18px;
+  opacity: 60%;
+}
