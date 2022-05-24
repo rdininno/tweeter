@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  margin: auto;
+  z-index: 0;
+  background-color: gold;
+   
+}
+
+.overlayImage {
+  width: 100%;
+}
+
+.overlayImageDiv {
+  position: absolute;
+  display: flex;
+  opacity: 50%;
+  width: 100%;
+  height: inherit;
+  background-size: revert;
+}
+
+#avatar {
+  z-index: 9;
+}
+
+.accountName {
+  z-index: 9;
+}
