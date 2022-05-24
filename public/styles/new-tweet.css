@@ -1,0 +1,42 @@
+section.new-tweet {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.underTweet {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #4056a1;
+  color: white;
+  font-family: bungee;
+  padding: 10px 20px;
+}
+
+output.counter {
+  font-family: bungee;
+  font-size: 35px;
+}
+
+textarea#tweet-text {
+  background: transparent;
+  border-width: 0px 0px 5px 0px;
+}
+
+label {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
