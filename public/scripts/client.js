@@ -4,10 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 const createTweetElement = function (tweetData) {
   const user = tweetData.user;
   const content = tweetData.content;
   const createdAt = timeago.format(new Date());
+
+  //helper excape function
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   let $tweet =
     $(`<article class="tweetContainer"> 
@@ -22,7 +30,7 @@ const createTweetElement = function (tweetData) {
         </header>
         <body>
           <div>
-            <p class="tweet">${content.text}</p>
+            <p class="tweet">${escape(content.text)}</p>
           </div>
         </body>
         <footer>
@@ -51,17 +59,24 @@ const renderTweets = function (tweets) {
 
 $(document).ready(function () {
   $('form').on('submit', (evt) => {
-    //console.log("EVENT TRIGGERED!!");
+    $('#tweetSection').empty();
     evt.preventDefault();
 
-    const $str = $('form').serialize();
+    const $str = $('#tweet-text').serialize();
 
-    $.post("/tweets/", $str, () => {
-      renderTweets($str);
-    })
+    if (!$str) {   ////check this
+      alert("tweet is empty");
+    } else if ($str.length > 140) {
+      alert("tweet is too long")
+    } else {
+      $.post("/tweets/", $str).done(() => {
+        loadTweets();
+      })
+    }
   })
 
-  const loadTweets = function() {
+  const loadTweets = function () {
+    $('#tweetSection').empty()
     $.get('/tweets', (res) => {
       renderTweets(res);
     })
