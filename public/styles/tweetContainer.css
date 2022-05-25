@@ -73,3 +73,7 @@ i.fa-solid.fa-heart:hover {
 i.fa-solid.fa-cannabis:hover {
   color: coral;
 }
+
+img.tweetAvatar {
+  height: 3em;
+}
