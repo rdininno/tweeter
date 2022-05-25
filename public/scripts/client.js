@@ -3,36 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
 
 const createTweetElement = function (tweetData) {
   const user = tweetData.user;
   const content = tweetData.content;
-  const createdAt = tweetData.created_at;
+  const createdAt = timeago.format(new Date());
 
   let $tweet =
     $(`<article class="tweetContainer"> 
@@ -82,9 +57,16 @@ $(document).ready(function () {
     const $str = $('form').serialize();
 
     $.post("/tweets/", $str, () => {
-      renderTweets(data);
+      renderTweets($str);
     })
   })
 
+  const loadTweets = function() {
+    $.get('/tweets', (res) => {
+      renderTweets(res);
+    })
+  };
+
+  loadTweets();
 })
 
