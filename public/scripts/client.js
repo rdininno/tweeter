@@ -34,7 +34,7 @@ const createTweetElement = function (tweetData) {
   const content = tweetData.content;
   const createdAt = tweetData.created_at;
 
-  let $tweet = 
+  let $tweet =
     $(`<article class="tweetContainer"> 
         <header>
           <div class="tweetHeaderAccount">
@@ -62,28 +62,29 @@ const createTweetElement = function (tweetData) {
           </div>
         </footer> 
       </article>`)
-  
+
   return $tweet;
 };
 
-const renderTweets = function(tweets) {
-  for(const tweet in tweets) {
+const renderTweets = function (tweets) {
+  for (const tweet in tweets) {
     const $currentTweet = createTweetElement(tweets[tweet]);
 
     $("#tweetSection").prepend($currentTweet);
   }
 };
 
-$(document).ready(function(){
-
+$(document).ready(function () {
   $('form').on('submit', (evt) => {
-    console.log("EVENT TRIGGERED!!");
+    //console.log("EVENT TRIGGERED!!");
     evt.preventDefault();
 
     const $str = $('form').serialize();
 
-    $.post( "/tweets/", $str)
+    $.post("/tweets/", $str, () => {
+      renderTweets(data);
+    })
   })
-  renderTweets(data);
+
 })
 
