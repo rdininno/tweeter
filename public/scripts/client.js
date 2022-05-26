@@ -64,10 +64,9 @@ $(document).ready(function () {
 })
 
 $(document).ready(function () {
-  $('.i.fa-solid.fa-angles-down').on('click', () => {
+  $('#writeNewTweetButton').on('click', () => {
     $('.new-tweet').slideDown("slow");
   })
-
 
   $('form').on('submit', (evt) => {
     $('#tweetSection').empty();
