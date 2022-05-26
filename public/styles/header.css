@@ -2,13 +2,12 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 400px;
+  justify-content: flex-end;
+  height: 225px;
   width: 100%;
   margin: auto;
   z-index: 0;
-  background-color: gold;
-   
+  background-color: #f8a3a3;
 }
 
 .overlayImage {
@@ -18,7 +17,7 @@ header {
 .overlayImageDiv {
   position: absolute;
   display: flex;
-  opacity: 50%;
+  opacity: 70%;
   width: 100%;
   height: inherit;
   background-size: revert;
@@ -26,8 +25,49 @@ header {
 
 #avatar {
   z-index: 9;
+  text-align: center;
 }
 
 .accountName {
   z-index: 9;
+  margin-bottom: 10px;
+}
+
+img.accountAvatar {
+  width: 15vw;
+}
+
+@media only screen and (min-width: 428px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    margin: auto;
+    z-index: 0;
+    background-color: f8a3a3;
+
+  }
+
+  img.accountAvatar {
+    width: 22vw;
+  }
+
+  .accountName {
+    z-index: 9;
+  }
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .overlayImageDiv {
+    position: absolute;
+    display: none;
+  }
+
+  header {
+    display: none;
+}
 }

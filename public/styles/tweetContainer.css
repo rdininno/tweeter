@@ -24,20 +24,24 @@ article.tweetContainer header {
   flex-direction: row;
 }
 
+
 p.tweetAccount {
-  margin: 20px 10px;
+  font-size: 14px;
+  margin: 5px;
 }
 
+
 p.tweetUser {
+  font-size: 15px;
   margin: 20px 10px;
   opacity: 65%;
 }
 
 p.tweet {
-  font-size: 30px;
+  font-size: 24px;
   padding: 10px 11px 15px;
-  border-bottom: 3px solid #767676;
   margin-bottom: 15px;
+  border: none;
 }
 
 article.tweetContainer footer {
@@ -46,15 +50,18 @@ article.tweetContainer footer {
   align-content: center;
 }
 
+
+
 p.tweetDate {
   margin: 0px 10px;
-  font-size: 18px;
-  opacity: 60%;
+  font-size: 12px;
+  opacity: 70%;
 }
+
 
 .tweetIcons {
   margin: 0px 10px;
-  font-size: 18px;
+  font-size: 12px;
   opacity: 60%;
 }
 
@@ -74,6 +81,93 @@ i.fa-solid.fa-cannabis:hover {
   color: coral;
 }
 
+
 img.tweetAvatar {
-  height: 3em;
+  height: 1.25em;
+}
+
+.fa-solid,
+.fas {
+  margin: 0px 3px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+@media only screen and (min-width: 428px) {
+
+  img.tweetAvatar {
+    height: 2em;
+  }
+
+  p.tweetAccount {
+    margin: 20px 10px;
+  }
+
+  p.tweetUser {
+    margin: 20px 10px;
+    opacity: 65%;
+  }
+
+  p.tweet {
+    font-size: 30px;
+    padding: 10px 11px 15px;
+    border-bottom: none;
+    margin-bottom: 15px;
+  }
+
+  p.tweetDate {
+    margin: 0px 10px;
+    font-size: 18px;
+    opacity: 60%;
+  }
+
+  .tweetIcons {
+    margin: 0px 10px;
+    font-size: 14px;
+    opacity: 60%;
+  }
+
+  .fa-solid,
+  .fas {
+    margin: 0px 3px;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+  article.tweetContainer header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+    background-color: #f4f1ec;
+    padding: 10px 10px;
+    margin: 10px 0px;
+  }
+
+  article.tweetContainer {
+    margin: 40px 0px;
+    border: 3px solid #767676;
+    padding: 15px;
+  }
+
+  article.tweetContainer footer {
+    margin: 5px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  p.tweet {
+    font-size: 24px;
+    padding: 10px 11px 15px;
+    border-bottom: none;
+    margin-bottom: 15px;
+  }
+
+  img.tweetAvatar {
+    height: 1.75em;
+  }
 }
