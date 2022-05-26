@@ -24,5 +24,9 @@
   font-size: 12px;
 }
 
+i.fa-solid.fa-angles-down:hover {
+  color: coral;
+  cursor: pointer;
+}
 
 
