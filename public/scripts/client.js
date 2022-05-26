@@ -71,28 +71,6 @@ $(document).ready(function () {
     $('.new-tweet').slideDown('slow');
   })
 
-  //scroll ---> back to top button appears
-  $(window).on('scroll', () => {
-    let y = window.scrollY;
-    if (y >= 150) {
-      $('button.backToTopButton ').show();
-      $('#writeNewTweetButton').slideUp('slow');
-      
-      $('button.backToTopButton ').on('click', () => {
-        window.scrollTo({
-          top: top,
-          behavior: 'smooth'
-        })
-
-        $('#tweet-text').focus();
-      })
-    }
-    if (y < 150) {
-      $('button.backToTopButton ').hide();
-      $('#writeNewTweetButton').slideDown('slow');
-    }
-  })
-
   //tweet submission
   $('form').on('submit', (evt) => {
     $('#tweetSection').empty();
