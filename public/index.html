@@ -41,7 +41,7 @@
   <!-- Top nav bar (fixed) -->
   <nav class="navigation">
     <span id="tweeterLogo">tweeter</span>
-    <span><i class="fa-solid fa-angles-down">Write a new tweet</i></span>
+    <div><i class="fa-solid fa-angles-down">Write a new tweet</i></div>
   </nav>
 
   <header>
@@ -61,7 +61,11 @@
   <!-- Page-specific (main) content here -->
   <main id="container">
     <section class="new-tweet">
+      <div class="newTweetHeader">
       <h2>Compose Tweet</h2>
+      <div id="errorMessageLong"> Error! Your tweet is too long :( </div>
+      <div id="errorMessageEmpty"> Error! Your tweet is empty :( </div>
+    </div>
       <form method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
