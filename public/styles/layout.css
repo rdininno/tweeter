@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -27,7 +30,32 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- #container {
+#container {
   width: 90%;
   margin: auto;
+}
+
+section#tweetSection {
+  width: 90%;
+  margin: auto;
+}
+
+button.backToTopButton {
+  background: none;
+  border: 2px solid #f8a3a3;
+  color: #f8a3a3;
+  border-radius: 80px;
+  font-size: 40px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9;
+}
+
+button.backToTopButton:hover {
+
+  background: #f8a3a3;
+  border: 2px solid #f8a3a3;
+  color: white;
+  border-radius: 80px;
 }
