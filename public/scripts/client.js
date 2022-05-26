@@ -69,6 +69,7 @@ $(document).ready(function () {
   //slide down new tweet container
   $('#writeNewTweetButton').on('click', () => {
     $('.new-tweet').slideDown('slow');
+    $('#writeNewTweetButton').slideUp('slow');
   })
 
   //tweet submission
@@ -94,10 +95,19 @@ $(document).ready(function () {
     } else {
       $.post("/tweets/", $str).done(() => {
         loadTweets();
+        $('#tweet-text').val('');
+        $('.new-tweet').slideUp('slow');
+
+        window.scrollTo({
+          top: top,
+          behavior: 'smooth'
+        })
+        
+        $('#writeNewTweetButton').slideDown('slow');
       })
     }
 
-    $('#tweet-text').val('');
+    
   })
 
   //load tweets
