@@ -58,16 +58,36 @@ const renderTweets = function (tweets) {
 };
 
 $(document).ready(function () {
+  $("#errorMessageLong").hide();
+  $("#errorMessageEmpty").hide();
+  $('.new-tweet').hide();
+})
+
+$(document).ready(function () {
+  $('.i.fa-solid.fa-angles-down').on('click', () => {
+    $('.new-tweet').slideDown("slow");
+  })
+
+
   $('form').on('submit', (evt) => {
     $('#tweetSection').empty();
     evt.preventDefault();
 
     const $str = $('#tweet-text').serialize();
 
-    if (!$str) {   ////check this
-      alert("tweet is empty");
+    //tweet validation before posting
+    if (!$str.split("=")[1]) {
+      $("#errorMessageEmpty").show("fast");
+      $('#tweet-text').on('click', () => {
+        $("#errorMessageEmpty").hide("fast");
+      })
+      loadTweets();
     } else if ($str.length > 140) {
-      alert("tweet is too long")
+      $("#errorMessageLong").show("fast");
+      $('#tweet-text').on('click', () => {
+        $("#errorMessageLong").hide("fast");
+      })
+      loadTweets();
     } else {
       $.post("/tweets/", $str).done(() => {
         loadTweets();
