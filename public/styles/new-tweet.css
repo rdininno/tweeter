@@ -69,3 +69,7 @@ div#errorMessageEmpty {
 button#submit:hover {
   color: coral;
 }
+
+textarea {
+  resize: none;
+}
