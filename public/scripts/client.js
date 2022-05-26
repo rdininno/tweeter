@@ -57,17 +57,43 @@ const renderTweets = function (tweets) {
   }
 };
 
+//Hide elements on load
 $(document).ready(function () {
   $("#errorMessageLong").hide();
   $("#errorMessageEmpty").hide();
   $('.new-tweet').hide();
+  $('button.backToTopButton ').hide();
 })
 
 $(document).ready(function () {
+  //slide down new tweet container
   $('#writeNewTweetButton').on('click', () => {
-    $('.new-tweet').slideDown("slow");
+    $('.new-tweet').slideDown('slow');
   })
 
+  //scroll ---> back to top button appears
+  $(window).on('scroll', () => {
+    
+
+    let y = window.scrollY;
+    if (y >= 150) {
+      $('button.backToTopButton ').show();
+      $('#writeNewTweetButton').slideUp('slow');
+      
+      $('button.backToTopButton ').on('click', () => {
+        window.scrollTo({
+          top: top,
+          behavior: 'smooth'
+        })
+      })
+    }
+    if (y < 150) {
+      $('button.backToTopButton ').hide();
+      $('#writeNewTweetButton').slideDown('slow');
+    }
+  })
+
+  //tweet submission
   $('form').on('submit', (evt) => {
     $('#tweetSection').empty();
     evt.preventDefault();
@@ -94,6 +120,7 @@ $(document).ready(function () {
     }
   })
 
+  //load tweets
   const loadTweets = function () {
     $('#tweetSection').empty()
     $.get('/tweets', (res) => {
@@ -101,6 +128,7 @@ $(document).ready(function () {
     })
   };
 
+  //load tweets immediately
   loadTweets();
 })
 
