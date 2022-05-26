@@ -65,3 +65,7 @@ div#errorMessageEmpty {
   font-weight: lighter;
   font-family: bungee;
 }
+
+button#submit:hover {
+  color: coral;
+}
