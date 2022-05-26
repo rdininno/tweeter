@@ -40,3 +40,28 @@ h2 {
   font-size: 40px;
   font-weight: bold;
 }
+
+.newTweetHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div#errorMessageLong {
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 11px 40px;
+  color: red;
+  font-size: 24px;
+  font-family: bungee;
+}
+
+div#errorMessageEmpty {
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 11px 40px;
+  color: red;
+  font-size: 24px;
+  font-weight: lighter;
+  font-family: bungee;
+}
