@@ -27,6 +27,8 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer.js"></script>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
 
   <!-- Add font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -48,7 +50,6 @@
     <div id="avatar">
       <img class="accountAvatar" src="/images/profile-hex.png">
     </div>
-    <br>
     <div class="accountName">
       <h2>Robert Di Ninno</h2>
     </div>
@@ -60,9 +61,22 @@
 
   <!-- Page-specific (main) content here -->
   <main id="container">
+    <div class="mainRight">
+    <section class="accountInfoDesktop">
+      <div id="avatar">
+        <img class="accountAvatar" src="/images/profile-hex.png">
+      </div>
+      <div class="accountName">
+        <h2>Robert Di Ninno</h2>
+      </div>
+      <div class="overlayImageDiv">
+        <img class="overlayImage" src="https://www.transparenttextures.com/patterns/cardboard-flat.png">
+      </div>
+    </section>
+
     <section class="new-tweet">
       <div class="newTweetHeader">
-      <h2>Compose Tweet</h2>
+      <h3>Compose Tweet</h3>
       <div id="errorMessageLong"> Error! Your tweet is too long :( </div>
       <div id="errorMessageEmpty"> Error! Your tweet is empty :( </div>
     </div>
@@ -75,7 +89,8 @@
         </div>
       </form>
     </section>
-
+  </div>
+  
     <section id="tweetSection">
       
     </section>
