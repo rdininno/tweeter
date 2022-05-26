@@ -73,8 +73,6 @@ $(document).ready(function () {
 
   //scroll ---> back to top button appears
   $(window).on('scroll', () => {
-    
-
     let y = window.scrollY;
     if (y >= 150) {
       $('button.backToTopButton ').show();
@@ -85,6 +83,8 @@ $(document).ready(function () {
           top: top,
           behavior: 'smooth'
         })
+
+        $('#tweet-text').focus();
       })
     }
     if (y < 150) {
