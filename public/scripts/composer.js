@@ -1,6 +1,6 @@
 //Char counter
 $(document).ready(function () {
-  $("#tweet-text").on('keydown', function () {
+  $("#tweet-text").on('keyup', function () {
     $messageLength = $('textarea#tweet-text').val().length;
     $charsLeft = 140 - $messageLength;
 
@@ -9,6 +9,9 @@ $(document).ready(function () {
 
     if ($($charCounter).html() < 0){
       $($charCounter).css("color", "red");
+    }
+    if ($($charCounter).html() >= 0){
+      $($charCounter).css("color", "black");
     }
   });
 });
