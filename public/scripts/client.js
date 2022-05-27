@@ -49,7 +49,7 @@ const createTweetElement = function(tweetData) {
   return $tweet;
 };
 
-//Render the tweets
+//Render the tweets to the tweet section
 const renderTweets = function(tweets) {
   for (const tweet in tweets) {
     const $currentTweet = createTweetElement(tweets[tweet]);
@@ -84,6 +84,7 @@ $(document).ready(function() {
 
     //tweet validation before posting
     if (!str.split("=")[1]) {
+      //empty tweet error display
       $("#errorMessageEmpty").show("fast");
 
       $('#tweet-text').on('click', () => {
@@ -92,6 +93,7 @@ $(document).ready(function() {
 
       loadTweets();
     } else if (strText.length > 140) {
+      //tweet too long error display
       $("#errorMessageLong").show("fast");
 
       $('#tweet-text').on('click', () => {
@@ -100,22 +102,20 @@ $(document).ready(function() {
 
       loadTweets();
     } else {
+      //Post the tweet
       $.post("/tweets/", str)
         .done(() => {
           loadTweets();
 
-          console.log("String Text: ", strText);
-
-          $('#tweet-text').val('');
           $('.new-tweet').slideUp('slow');
+          $('#writeNewTweetButton').slideDown('slow');
+          $('#tweet-text').val('');
+          $('.counter').html(140);
 
           window.scrollTo({
             top: top,
             behavior: 'smooth'
           });
-
-          $('#writeNewTweetButton').slideDown('slow');
-          $('.counter').html(140);
         });
     }
   });
