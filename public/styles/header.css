@@ -71,4 +71,12 @@ img.accountAvatar {
   header {
     display: none;
   }
+
+  .fa-solid.fa-angles-down {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
 }
