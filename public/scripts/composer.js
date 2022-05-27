@@ -28,6 +28,7 @@ $(window).on('scroll', () => {
         top: top,
         behavior: 'smooth'
       })
+      
       $('.new-tweet').slideDown('slow');
       $('#tweet-text').focus();
     })

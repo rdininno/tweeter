@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
+//Create tweet
 const createTweetElement = function (tweetData) {
   const user = tweetData.user;
   const content = tweetData.content;
@@ -49,6 +49,7 @@ const createTweetElement = function (tweetData) {
   return $tweet;
 };
 
+//Render the tweets
 const renderTweets = function (tweets) {
   for (const tweet in tweets) {
     const $currentTweet = createTweetElement(tweets[tweet]);
@@ -65,6 +66,7 @@ $(document).ready(function () {
   $('button.backToTopButton ').hide();
 })
 
+//doc ready
 $(document).ready(function () {
   //slide down new tweet container
   $('#writeNewTweetButton').on('click', () => {
@@ -82,37 +84,43 @@ $(document).ready(function () {
     //tweet validation before posting
     if (!$str.split("=")[1]) {
       $("#errorMessageEmpty").show("fast");
+
       $('#tweet-text').on('click', () => {
         $("#errorMessageEmpty").hide("fast");
       })
+
       loadTweets();
     } else if ($str.length > 140) {
       $("#errorMessageLong").show("fast");
+
       $('#tweet-text').on('click', () => {
         $("#errorMessageLong").hide("fast");
       })
+
       loadTweets();
     } else {
-      $.post("/tweets/", $str).done(() => {
-        loadTweets();
-        $('#tweet-text').val('');
-        $('.new-tweet').slideUp('slow');
+      $.post("/tweets/", $str)
+        .done(() => {
+          loadTweets();
 
-        window.scrollTo({
-          top: top,
-          behavior: 'smooth'
+          $('#tweet-text').val('');
+          $('.new-tweet').slideUp('slow');
+
+          window.scrollTo({
+            top: top,
+            behavior: 'smooth'
+          })
+
+          $('#writeNewTweetButton').slideDown('slow');
+          $('.counter').html(140);
         })
-        
-        $('#writeNewTweetButton').slideDown('slow');
-      })
     }
-
-    
   })
 
-  //load tweets
+  //load the tweets
   const loadTweets = function () {
     $('#tweetSection').empty()
+
     $.get('/tweets', (res) => {
       renderTweets(res);
     })
