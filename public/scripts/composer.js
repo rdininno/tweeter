@@ -19,7 +19,7 @@ $(document).ready(function () {
 //scroll ---> back to top button appears
 $(window).on('scroll', () => {
   let y = window.scrollY;
-  if (y >= 75) {
+  if (y >= 125) {
     $('button.backToTopButton ').show();
     $('#writeNewTweetButton').slideUp('slow');
     
@@ -28,12 +28,12 @@ $(window).on('scroll', () => {
         top: top,
         behavior: 'smooth'
       })
-      
+
       $('.new-tweet').slideDown('slow');
       $('#tweet-text').focus();
     })
   }
-  if (y < 75) {
+  if (y < 125) {
     $('button.backToTopButton ').hide();
     $('#writeNewTweetButton').slideDown('slow');
   }
