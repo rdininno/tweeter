@@ -8,7 +8,7 @@
 const createTweetElement = function (tweetData) {
   const user = tweetData.user;
   const content = tweetData.content;
-  const createdAt = timeago.format(new Date());
+  const createdAt = timeago.format(tweetData.created_at);
 
   //helper excape function
   const escape = function (str) {
@@ -80,6 +80,7 @@ $(document).ready(function () {
     evt.preventDefault();
 
     const $str = $('#tweet-text').serialize();
+    const strText = $('#tweet-text').val();
 
     //tweet validation before posting
     if (!$str.split("=")[1]) {
@@ -90,9 +91,10 @@ $(document).ready(function () {
       })
 
       loadTweets();
-    } else if ($str.length > 140) {
+    } else if (strText.length > 140) {
       $("#errorMessageLong").show("fast");
 
+      console.log("ERROR")
       $('#tweet-text').on('click', () => {
         $("#errorMessageLong").hide("fast");
       })
@@ -103,6 +105,8 @@ $(document).ready(function () {
         .done(() => {
           loadTweets();
 
+          console.log("String Text: ", strText);
+
           $('#tweet-text').val('');
           $('.new-tweet').slideUp('slow');
 
@@ -110,6 +114,8 @@ $(document).ready(function () {
             top: top,
             behavior: 'smooth'
           })
+
+          
 
           $('#writeNewTweetButton').slideDown('slow');
           $('.counter').html(140);
