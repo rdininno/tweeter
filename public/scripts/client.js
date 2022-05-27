@@ -83,7 +83,7 @@ $(document).ready(function() {
     const strText = $('#tweet-text').val();
 
     //tweet validation before posting
-    if (!str.split("=")[1]) {
+    if (!strText) {
       //empty tweet error display
       $("#errorMessageEmpty").show("fast");
 
