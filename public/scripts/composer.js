@@ -1,17 +1,17 @@
 //Char counter
-$(document).ready(function () {
-  $("#tweet-text").on('keyup', function () {
-    $messageLength = $('textarea#tweet-text').val().length;
-    $charsLeft = 140 - $messageLength;
+$(document).ready(function() {
+  $("#tweet-text").on('keyup', function() {
+    messageLength = $('textarea#tweet-text').val().length;
+    charsLeft = 140 - messageLength;
 
-    $charCounter = $(this).nextUntil('output.counter').find('.counter');
-    $($charCounter).html($charsLeft);
+    charCounter = $(this).nextUntil('output.counter').find('.counter');
+    $(charCounter).html(charsLeft);
 
-    if ($($charCounter).html() < 0){
-      $($charCounter).css("color", "red");
+    if ($(charCounter).html() < 0) {
+      $(charCounter).css("color", "red");
     }
-    if ($($charCounter).html() >= 0){
-      $($charCounter).css("color", "black");
+    if ($(charCounter).html() >= 0) {
+      $(charCounter).css("color", "black");
     }
   });
 });
@@ -27,14 +27,14 @@ $(window).on('scroll', () => {
       window.scrollTo({
         top: top,
         behavior: 'smooth'
-      })
+      });
 
       $('.new-tweet').slideDown('slow');
       $('#tweet-text').focus();
-    })
+    });
   }
   if (y < 125) {
     $('button.backToTopButton ').hide();
     $('#writeNewTweetButton').slideDown('slow');
   }
-})
+});

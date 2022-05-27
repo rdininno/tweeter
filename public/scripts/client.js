@@ -5,13 +5,13 @@
  */
 
 //Create tweet
-const createTweetElement = function (tweetData) {
+const createTweetElement = function(tweetData) {
   const user = tweetData.user;
   const content = tweetData.content;
   const createdAt = timeago.format(tweetData.created_at);
 
   //helper excape function
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -44,13 +44,13 @@ const createTweetElement = function (tweetData) {
             <i class="fa-solid fa-cannabis"></i>
           </div>
         </footer> 
-      </article>`)
+      </article>`);
 
   return $tweet;
 };
 
 //Render the tweets
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   for (const tweet in tweets) {
     const $currentTweet = createTweetElement(tweets[tweet]);
 
@@ -59,49 +59,48 @@ const renderTweets = function (tweets) {
 };
 
 //Hide elements on load
-$(document).ready(function () {
+$(document).ready(function() {
   $("#errorMessageLong").hide();
   $("#errorMessageEmpty").hide();
   $('.new-tweet').hide();
   $('button.backToTopButton ').hide();
-})
+});
 
 //doc ready
-$(document).ready(function () {
+$(document).ready(function() {
   //slide down new tweet container
   $('#writeNewTweetButton').on('click', () => {
     $('.new-tweet').slideDown('slow');
     $('#writeNewTweetButton').slideUp('slow');
-  })
+  });
 
   //tweet submission
   $('form').on('submit', (evt) => {
     $('#tweetSection').empty();
     evt.preventDefault();
 
-    const $str = $('#tweet-text').serialize();
+    const str = $('#tweet-text').serialize();
     const strText = $('#tweet-text').val();
 
     //tweet validation before posting
-    if (!$str.split("=")[1]) {
+    if (!str.split("=")[1]) {
       $("#errorMessageEmpty").show("fast");
 
       $('#tweet-text').on('click', () => {
         $("#errorMessageEmpty").hide("fast");
-      })
+      });
 
       loadTweets();
     } else if (strText.length > 140) {
       $("#errorMessageLong").show("fast");
 
-      console.log("ERROR")
       $('#tweet-text').on('click', () => {
         $("#errorMessageLong").hide("fast");
-      })
+      });
 
       loadTweets();
     } else {
-      $.post("/tweets/", $str)
+      $.post("/tweets/", str)
         .done(() => {
           loadTweets();
 
@@ -113,26 +112,24 @@ $(document).ready(function () {
           window.scrollTo({
             top: top,
             behavior: 'smooth'
-          })
-
-          
+          });
 
           $('#writeNewTweetButton').slideDown('slow');
           $('.counter').html(140);
-        })
+        });
     }
-  })
+  });
 
   //load the tweets
-  const loadTweets = function () {
-    $('#tweetSection').empty()
+  const loadTweets = function() {
+    $('#tweetSection').empty();
 
     $.get('/tweets', (res) => {
       renderTweets(res);
-    })
+    });
   };
 
   //load tweets immediately
   loadTweets();
-})
+});
 
