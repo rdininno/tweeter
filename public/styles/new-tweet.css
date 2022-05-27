@@ -14,8 +14,6 @@ form {
   margin-top: 20px;
 }
 
-
-
 button#submit {
   background-color: #4056a1;
   color: white;
@@ -24,20 +22,15 @@ button#submit {
   font-size: 20px;
 }
 
-
-
 output.counter {
   font-family: bungee;
   font-size: 24px;
 }
 
-
-
 textarea#tweet-text {
   background: transparent;
   border-width: 0px 0px 3px 0px;
 }
-
 
 label {
   font-size: 21px;
@@ -52,14 +45,11 @@ h2 {
   font-weight: bold;
 }
 
-
 .newTweetHeader {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-
 
 div#errorMessageEmpty {
   border: 2px solid red;
@@ -85,18 +75,17 @@ div#errorMessageLong {
   background-color: red;
 }
 
-
-
 textarea {
   resize: none;
 }
 
+/* tablet breakpoint */
 @media only screen and (min-width: 428px) {
   .newTweetHeader {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
   div#errorMessageLong {
     border: 2px solid red;
@@ -144,42 +133,43 @@ textarea {
   }
 }
 
+/* desktop breakpoint */
 @media only screen and (min-width: 1024px) {
   .newTweetHeader h3 {
     display: none;
-}
+  }
 
-div#errorMessageEmpty {
-  border: 2px solid red;
-  border-radius: 5px;
-  padding: 11px 40px;
-  color: red;
-  font-size: 21px;
-  font-weight: lighter;
-  font-family: bungee;
-  background-color: #f4f1ec;
-  margin-bottom: 20px;
-}
+  div#errorMessageEmpty {
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 11px 40px;
+    color: red;
+    font-size: 21px;
+    font-weight: lighter;
+    font-family: bungee;
+    background-color: #f4f1ec;
+    margin-bottom: 20px;
+  }
 
-div#errorMessageLong {
-  border: 2px solid red;
-  border-radius: 5px;
-  padding: 11px 40px;
-  color: red;
-  font-size: 21px;
-  font-weight: lighter;
-  font-family: bungee;
-  background-color: #f4f1ec;
-  margin-bottom: 20px;
-}
+  div#errorMessageLong {
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 11px 40px;
+    color: red;
+    font-size: 21px;
+    font-weight: lighter;
+    font-family: bungee;
+    background-color: #f4f1ec;
+    margin-bottom: 20px;
+  }
 
-label {
-  margin-bottom: 20px;
-}
+  label {
+    margin-bottom: 20px;
+  }
 
-form {
-  display: flex;
-  margin: 25px;
-  flex-direction: column;
-}
+  form {
+    display: flex;
+    margin: 25px;
+    flex-direction: column;
+  }
 }

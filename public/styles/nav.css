@@ -25,6 +25,7 @@
   font-size: 12px;
 }
 
+/* tablet breakpoint */
 @media only screen and (min-width: 428px) {
   .navigation {
     display: flex;
@@ -38,7 +39,7 @@
     z-index: 10;
     position: fixed;
     top: 0;
-}
+  }
 
   #tweeterLogo {
     display: flex;
@@ -49,10 +50,9 @@
     color: coral;
     cursor: pointer;
   }
-
-
 }
 
+/* desktop breakpoint */
 @media only screen and (min-width: 1024px) {
   .navigation {
     display: flex;
@@ -67,6 +67,5 @@
     position: fixed;
     top: 0;
     background-color: #4056a1;
-}
-  
+  }
 }

@@ -37,6 +37,7 @@ img.accountAvatar {
   width: 15vw;
 }
 
+/* tablet breakpoint */
 @media only screen and (min-width: 428px) {
   header {
     display: flex;
@@ -60,7 +61,7 @@ img.accountAvatar {
   }
 }
 
-
+/* desktop breakpoint */
 @media only screen and (min-width: 1024px) {
   .overlayImageDiv {
     position: absolute;
@@ -69,5 +70,5 @@ img.accountAvatar {
 
   header {
     display: none;
-}
+  }
 }

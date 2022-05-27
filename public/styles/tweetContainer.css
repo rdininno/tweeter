@@ -24,12 +24,10 @@ article.tweetContainer header {
   flex-direction: row;
 }
 
-
 p.tweetAccount {
   font-size: 14px;
   margin: 5px;
 }
-
 
 p.tweetUser {
   font-size: 15px;
@@ -50,14 +48,11 @@ article.tweetContainer footer {
   align-content: center;
 }
 
-
-
 p.tweetDate {
   margin: 0px 10px;
   font-size: 12px;
   opacity: 70%;
 }
-
 
 .tweetIcons {
   margin: 0px 10px;
@@ -81,7 +76,6 @@ i.fa-solid.fa-cannabis:hover {
   color: coral;
 }
 
-
 img.tweetAvatar {
   height: 1.25em;
 }
@@ -93,8 +87,8 @@ img.tweetAvatar {
   font-weight: 900;
 }
 
+/* tablet breakpoint */
 @media only screen and (min-width: 428px) {
-
   img.tweetAvatar {
     height: 2em;
   }
@@ -136,6 +130,7 @@ img.tweetAvatar {
 
 }
 
+/* desktop breakpoint */
 @media only screen and (min-width: 1024px) {
   article.tweetContainer header {
     display: flex;
